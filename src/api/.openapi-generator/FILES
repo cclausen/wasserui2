@@ -1,0 +1,17 @@
+.gitignore
+.npmignore
+.openapi-generator-ignore
+api.ts
+base.ts
+common.ts
+configuration.ts
+git_push.sh
+index.ts
+wasser-api/achievement-controller-api.ts
+wasser-api/person-controller-api.ts
+wasser-api/presence-controller-api.ts
+wasser-model/achievement.ts
+wasser-model/index.ts
+wasser-model/person.ts
+wasser-model/place.ts
+wasser-model/presence.ts
