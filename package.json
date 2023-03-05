@@ -17,7 +17,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "generate-client": "openapi-generator-cli generate -i ./src/api-docs.yaml --api-package wasser-api --model-package wasser-model -g typescript-axios -o ./src/api --additional-properties=typescriptThreePlus=true,withInterfaces=true,withSeparateModelsAndApi=true,withTypedRequestBodies=true,withUnionTypes"
+    "generate-client": "openapi-generator-cli generate -i ./src/api-docs.yaml --enable-post-process-file --api-package api --model-package model -g javascript -o ./src/api --additional-properties=typescriptThreePlus=true,withInterfaces=true,withSeparateModelsAndApi=true,withTypedRequestBodies=true,withUnionTypes"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
@@ -29,7 +29,9 @@
     "vue": "^3.2.47",
     "vue-flatpickr-component": "^11.0.2",
     "vue-router": "^4.1.6",
-    "vuex": "^4.1.0"
+    "vuex": "^4.1.0",
+    "superagent": "^8.0.9",
+    "querystring": "^0.2.1"
   },
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.5.2",
@@ -61,6 +63,7 @@
     },
     "rules": {
       "vue/multi-word-component-names": "off"
-    }
+    },
+    "ignorePatterns": ["src/api/*"]
   }
 }
