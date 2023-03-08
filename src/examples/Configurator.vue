@@ -10,7 +10,7 @@
       <div class="pt-3 pb-0 bg-transparent card-header">
         <div
           class=""
-          :class="this.$store.state.isRTL ? 'float-end' : 'float-start'"
+          :class="'float-start'"
         >
           <h5 class="mt-3 mb-0">Argon Configurator</h5>
           <p>See our dashboard options.</p>
@@ -18,7 +18,7 @@
         <div
           class="mt-4"
           @click="toggle"
-          :class="this.$store.state.isRTL ? 'float-start' : 'float-end'"
+          :class="'float-end'"
         >
           <button class="p-0 btn btn-link text-dark fixed-plugin-close-button">
             <i class="fa fa-close"></i>
@@ -35,7 +35,7 @@
         <a href="#" class="switch-trigger background-color">
           <div
             class="my-2 badge-colors"
-            :class="this.$store.state.isRTL ? 'text-end' : ' text-start'"
+            :class="' text-start'"
           >
             <span
               class="badge filter bg-gradient-primary active"
@@ -109,10 +109,7 @@
           <h6 class="mb-0">Navbar Fixed</h6>
           <div class="form-check form-switch ps-0 ms-auto my-auto">
             <input
-              class="mt-1 form-check-input"
-              :class="
-                this.$store.state.isRTL ? 'float-end  me-auto' : ' ms-auto'
-              "
+              class="mt-1 form-check-input ms-auto"
               type="checkbox"
               id="navbarFixed"
               :checked="this.$store.state.isNavFixed"
@@ -123,7 +120,7 @@
 
         <hr class="horizontal dark my-4" />
         <div class="mt-2 mb-5 d-flex">
-          <h6 class="mb-0" :class="this.$store.state.isRTL ? 'ms-2' : ''">
+          <h6 class="mb-0">
             Light / Dark
           </h6>
           <div class="form-check form-switch ps-0 ms-auto my-auto">
@@ -204,7 +201,6 @@ export default {
         this.$store.state.darkMode = false;
         this.$store.state.sidebarType = "bg-white";
         deactivateDarkMode();
-        return;
       } else {
         this.$store.state.darkMode = true;
         this.$store.state.sidebarType = "bg-default";

@@ -20,20 +20,20 @@
 import Chart from "chart.js/auto";
 
 export default {
-  name: "gradient-line-chart",
+  name: "presence-line-chart",
 
   props: {
     title: {
       type: String,
-      default: "Sales overview",
+      default: "Anwesenheit",
     },
     detail1: {
       type: String,
-      default: "4% more",
+      default: "0%",
     },
     detail2: {
       type: String,
-      default: "in 2021",
+      default: "zum Vorjahr",
     },
   },
 
@@ -45,6 +45,7 @@ export default {
     gradientStroke1.addColorStop(1, "rgba(94, 114, 228, 0.2)");
     gradientStroke1.addColorStop(0.2, "rgba(94, 114, 228, 0.0)");
     gradientStroke1.addColorStop(0, "rgba(94, 114, 228, 0)");
+    // noinspection JSAnnotator
     new Chart(ctx1, {
       type: "line",
       data: {

@@ -1,9 +1,6 @@
 <template>
   <nav
     class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl"
-    :class="
-      this.$store.state.isRTL ? 'top-0 position-sticky z-index-sticky' : ''
-    "
     v-bind="$attrs"
     id="navbarBlur"
     data-scroll="true"
@@ -13,12 +10,12 @@
 
       <div
         class="mt-2 collapse navbar-collapse mt-sm-0 me-md-0 me-sm-4"
-        :class="this.$store.state.isRTL ? 'px-0' : 'me-sm-4'"
+        :class="'me-sm-4'"
         id="navbar"
       >
         <div
           class="pe-md-3 d-flex align-items-center"
-          :class="this.$store.state.isRTL ? 'me-md-auto' : 'ms-md-auto'"
+          :class="'ms-md-auto'"
         >
           <div class="input-group">
             <span class="input-group-text text-body">
@@ -28,7 +25,7 @@
               type="text"
               class="form-control"
               :placeholder="
-                this.$store.state.isRTL ? 'أكتب هنا...' : 'Type here...'
+                'Type here...'
               "
             />
           </div>
@@ -42,12 +39,9 @@
             >
               <i
                 class="fa fa-user"
-                :class="this.$store.state.isRTL ? 'ms-sm-2' : 'me-sm-2'"
+                :class="'me-sm-2'"
               ></i>
-              <span v-if="this.$store.state.isRTL" class="d-sm-inline d-none"
-                >يسجل دخول</span
-              >
-              <span v-else class="d-sm-inline d-none">Sign In</span>
+              <span class="d-sm-inline d-none">Sign In</span>
             </router-link>
           </li>
           <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -71,7 +65,7 @@
           </li>
           <li
             class="nav-item dropdown d-flex align-items-center"
-            :class="this.$store.state.isRTL ? 'ps-2' : 'pe-2'"
+            :class="'pe-2'"
           >
             <a
               href="#"
@@ -90,7 +84,7 @@
               aria-labelledby="dropdownMenuButton"
             >
               <li class="mb-2">
-                <a class="dropdown-item border-radius-md" href="javascript:;">
+                <a class="dropdown-item border-radius-md" href="javascript:">
                   <div class="py-1 d-flex">
                     <div class="my-auto">
                       <img
@@ -113,7 +107,7 @@
                 </a>
               </li>
               <li class="mb-2">
-                <a class="dropdown-item border-radius-md" href="javascript:;">
+                <a class="dropdown-item border-radius-md" href="javascript:">
                   <div class="py-1 d-flex">
                     <div class="my-auto">
                       <img
@@ -136,7 +130,7 @@
                 </a>
               </li>
               <li>
-                <a class="dropdown-item border-radius-md" href="javascript:;">
+                <a class="dropdown-item border-radius-md" href="javascript:">
                   <div class="py-1 d-flex">
                     <div
                       class="my-auto avatar avatar-sm bg-gradient-secondary me-3"
@@ -145,9 +139,7 @@
                         width="12px"
                         height="12px"
                         viewBox="0 0 43 36"
-                        version="1.1"
                         xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
                       >
                         <title>credit-card</title>
                         <g

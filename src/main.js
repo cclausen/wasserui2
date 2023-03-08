@@ -4,6 +4,7 @@ import store from "./store";
 import router from "./router";
 import "./assets/css/nucleo-icons.css";
 import "./assets/css/nucleo-svg.css";
+import "./assets/css/fa-all.min.css";
 import ArgonDashboard from "./argon-dashboard";
 
 const appInstance = createApp(App);

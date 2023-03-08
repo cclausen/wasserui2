@@ -4,15 +4,15 @@
       <h6 class="mb-0">{{ cardTitle }}</h6>
     </div>
     <div class="p-3 card-body">
-      <ul class="list-group" :class="this.$store.state.isRTL ? 'pe-0' : ''">
+      <ul class="list-group">
         <li
           class="mb-2 border-0 list-group-item d-flex justify-content-between border-radius-lg"
-          :class="this.$store.state.isRTL ? 'pe-0' : 'ps-0'"
+          :class="'ps-0'"
         >
           <div class="d-flex align-items-center">
             <div
               class="text-center shadow icon icon-shape icon-sm bg-gradient-dark"
-              :class="this.$store.state.isRTL ? 'ms-3' : 'me-3'"
+              :class="'me-3'"
             >
               <i class="ni ni-mobile-button text-white opacity-10"></i>
             </div>
@@ -34,12 +34,12 @@
         </li>
         <li
           class="mb-2 border-0 list-group-item d-flex justify-content-between border-radius-lg"
-          :class="this.$store.state.isRTL ? 'pe-0' : 'ps-0'"
+          :class="'ps-0'"
         >
           <div class="d-flex align-items-center">
             <div
               class="text-center shadow icon icon-shape icon-sm bg-gradient-dark"
-              :class="this.$store.state.isRTL ? 'ms-3' : 'me-3'"
+              :class="'me-3'"
             >
               <i class="ni ni-tag text-white opacity-10"></i>
             </div>
@@ -61,12 +61,12 @@
         </li>
         <li
           class="border-0 list-group-item d-flex justify-content-between border-radius-lg"
-          :class="this.$store.state.isRTL ? 'pe-0' : 'ps-0'"
+          :class="'ps-0'"
         >
           <div class="d-flex align-items-center">
             <div
               class="text-center shadow icon icon-shape icon-sm bg-gradient-dark"
-              :class="this.$store.state.isRTL ? 'ms-3' : 'me-3'"
+              :class="'me-3'"
             >
               <i class="ni ni-box-2 text-white opacity-10"></i>
             </div>
@@ -88,12 +88,12 @@
         </li>
         <li
           class="border-0 list-group-item d-flex justify-content-between border-radius-lg"
-          :class="this.$store.state.isRTL ? 'pe-0' : 'ps-0'"
+          :class="'ps-0'"
         >
           <div class="d-flex align-items-center">
             <div
               class="text-center shadow icon icon-shape icon-sm bg-gradient-dark"
-              :class="this.$store.state.isRTL ? 'ms-3' : 'me-3'"
+              :class="'me-3'"
             >
               <i class="ni ni-satisfied text-white opacity-10"></i>
             </div>

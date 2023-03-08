@@ -2,7 +2,7 @@
   <div class="py-4 container-fluid">
     <div class=" row">
       <div class="col-12">
-        <authors-table />
+        <persons-table />
       </div>
     </div>
     <div class="mt-4 row">
@@ -14,13 +14,13 @@
 </template>
 
 <script>
-import AuthorsTable from "./components/AuthorsTable.vue";
+import PersonsTable from "./components/PersonsTable.vue";
 import ProjectsTable from "./components/ProjectsTable.vue";
 
 export default {
   name: "tables",
   components: {
-    AuthorsTable,
+    PersonsTable,
     ProjectsTable
   },
   data() {
