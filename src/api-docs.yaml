@@ -125,7 +125,7 @@ paths:
     get:
       tags:
       - presence-controller
-      operationId: all
+      operationId: allOpen
       responses:
         "200":
           description: OK
@@ -156,6 +156,25 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Presence'
+  /api/presences/open/{personId}:
+    get:
+      tags:
+      - presence-controller
+      operationId: openPresenceByPerson
+      parameters:
+      - name: personId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Presence'
   /api/persons/{personId}:
     get:
       tags:

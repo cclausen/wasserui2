@@ -1,6 +1,5 @@
 .babelrc
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 docs/Achievement.md
@@ -22,10 +21,3 @@ src/model/Achievement.js
 src/model/Person.js
 src/model/Place.js
 src/model/Presence.js
-test/api/AchievementControllerApi.spec.js
-test/api/PersonControllerApi.spec.js
-test/api/PresenceControllerApi.spec.js
-test/model/Achievement.spec.js
-test/model/Person.spec.js
-test/model/Place.spec.js
-test/model/Presence.spec.js

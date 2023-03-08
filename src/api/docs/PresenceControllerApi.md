@@ -4,52 +4,14 @@ All URIs are relative to *http://localhost:8081*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**all**](PresenceControllerApi.md#all) | **GET** /api/presences | 
 [**allByPerson**](PresenceControllerApi.md#allByPerson) | **GET** /api/presences/{personId} | 
+[**allOpen**](PresenceControllerApi.md#allOpen) | **GET** /api/presences | 
+[**openPresenceByPerson**](PresenceControllerApi.md#openPresenceByPerson) | **GET** /api/presences/open/{personId} | 
 [**startPresence**](PresenceControllerApi.md#startPresence) | **POST** /api/presences/start | 
 [**stopPresence**](PresenceControllerApi.md#stopPresence) | **POST** /api/presences/stopById | 
 [**stopPresenceByUser**](PresenceControllerApi.md#stopPresenceByUser) | **POST** /api/presences/stop | 
 [**stopPresenceByUser1**](PresenceControllerApi.md#stopPresenceByUser1) | **POST** /api/presences/stopHere | 
 
-
-
-## all
-
-> [Presence] all()
-
-
-
-### Example
-
-```javascript
-import OpenApiDefinition from 'open_api_definition';
-
-let apiInstance = new OpenApiDefinition.PresenceControllerApi();
-apiInstance.all((error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**[Presence]**](Presence.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: */*
 
 
 ## allByPerson
@@ -84,6 +46,88 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[Presence]**](Presence.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## allOpen
+
+> [Presence] allOpen()
+
+
+
+### Example
+
+```javascript
+import OpenApiDefinition from 'open_api_definition';
+
+let apiInstance = new OpenApiDefinition.PresenceControllerApi();
+apiInstance.allOpen((error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**[Presence]**](Presence.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## openPresenceByPerson
+
+> Presence openPresenceByPerson(personId)
+
+
+
+### Example
+
+```javascript
+import OpenApiDefinition from 'open_api_definition';
+
+let apiInstance = new OpenApiDefinition.PresenceControllerApi();
+let personId = 789; // Number | 
+apiInstance.openPresenceByPerson(personId, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **personId** | **Number**|  | 
+
+### Return type
+
+[**Presence**](Presence.md)
 
 ### Authorization
 

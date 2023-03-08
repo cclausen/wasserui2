@@ -35,41 +35,6 @@ export default class PresenceControllerApi {
 
 
     /**
-     * Callback function to receive the result of the all operation.
-     * @callback module:api/PresenceControllerApi~allCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Presence>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * @param {module:api/PresenceControllerApi~allCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Presence>}
-     */
-    all(callback) {
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = [];
-      let accepts = ['*/*'];
-      let returnType = [Presence];
-      return this.apiClient.callApi(
-        '/api/presences', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the allByPerson operation.
      * @callback module:api/PresenceControllerApi~allByPersonCallback
      * @param {String} error Error message, if any.
@@ -105,6 +70,82 @@ export default class PresenceControllerApi {
       let returnType = [Presence];
       return this.apiClient.callApi(
         '/api/presences/{personId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the allOpen operation.
+     * @callback module:api/PresenceControllerApi~allOpenCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Presence>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:api/PresenceControllerApi~allOpenCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Presence>}
+     */
+    allOpen(callback) {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = [Presence];
+      return this.apiClient.callApi(
+        '/api/presences', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the openPresenceByPerson operation.
+     * @callback module:api/PresenceControllerApi~openPresenceByPersonCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Presence} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {Number} personId 
+     * @param {module:api/PresenceControllerApi~openPresenceByPersonCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Presence}
+     */
+    openPresenceByPerson(personId, callback) {
+      let postBody = null;
+      // verify the required parameter 'personId' is set
+      if (personId === undefined || personId === null) {
+        throw new Error("Missing the required parameter 'personId' when calling openPresenceByPerson");
+      }
+
+      let pathParams = {
+        'personId': personId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = Presence;
+      return this.apiClient.callApi(
+        '/api/presences/open/{personId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

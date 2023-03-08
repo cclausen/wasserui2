@@ -1,17 +1,16 @@
 {
-  "name": "vue-argon-dashboard-2",
-  "version": "3.0.0",
+  "name": "wasser_ui",
+  "version": "2.0.0",
   "private": true,
-  "author": "Creative Tim",
-  "license": "SEE LICENSE IN <https://www.creative-tim.com/license>",
-  "description": "VueJS version of Argon Dashboard 2 by Creative Tim",
-  "homepage": "https://demos.creative-tim.com/vue-argon-dashboard/",
+  "author": "Christian Clausen",
+  "license": "Creatuve Commons Attribution 3.0 Unported",
+  "description": "UI for the Java-Backend WaSSER",
   "bugs": {
-    "url": "https://github.com/creativetimofficial/vue-argon-dashboard/issues"
+    "url": "https://github.com/cclausen/wasserui2/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/vue-argon-dashboard.git"
+    "url": "git+https://github.com/cclausen/wasserui2.git"
   },
   "scripts": {
     "serve": "WATCHPACK_POLLING=true vue-cli-service serve",

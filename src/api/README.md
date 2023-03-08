@@ -129,8 +129,9 @@ Class | Method | HTTP request | Description
 *OpenApiDefinition.PersonControllerApi* | [**deletePerson**](docs/PersonControllerApi.md#deletePerson) | **DELETE** /api/persons/{personId} | 
 *OpenApiDefinition.PersonControllerApi* | [**getPerson**](docs/PersonControllerApi.md#getPerson) | **GET** /api/persons/{personId} | 
 *OpenApiDefinition.PersonControllerApi* | [**indexPersons**](docs/PersonControllerApi.md#indexPersons) | **GET** /api/persons/ | 
-*OpenApiDefinition.PresenceControllerApi* | [**all**](docs/PresenceControllerApi.md#all) | **GET** /api/presences | 
 *OpenApiDefinition.PresenceControllerApi* | [**allByPerson**](docs/PresenceControllerApi.md#allByPerson) | **GET** /api/presences/{personId} | 
+*OpenApiDefinition.PresenceControllerApi* | [**allOpen**](docs/PresenceControllerApi.md#allOpen) | **GET** /api/presences | 
+*OpenApiDefinition.PresenceControllerApi* | [**openPresenceByPerson**](docs/PresenceControllerApi.md#openPresenceByPerson) | **GET** /api/presences/open/{personId} | 
 *OpenApiDefinition.PresenceControllerApi* | [**startPresence**](docs/PresenceControllerApi.md#startPresence) | **POST** /api/presences/start | 
 *OpenApiDefinition.PresenceControllerApi* | [**stopPresence**](docs/PresenceControllerApi.md#stopPresence) | **POST** /api/presences/stopById | 
 *OpenApiDefinition.PresenceControllerApi* | [**stopPresenceByUser**](docs/PresenceControllerApi.md#stopPresenceByUser) | **POST** /api/presences/stop | 
