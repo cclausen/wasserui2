@@ -14,7 +14,7 @@
     "url": "git+https://github.com/creativetimofficial/vue-argon-dashboard.git"
   },
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "WATCHPACK_POLLING=true vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "generate-client": "openapi-generator-cli generate -i ./src/api-docs.yaml --enable-post-process-file --api-package api --model-package model -g javascript -o ./src/api --additional-properties=typescriptThreePlus=true,withInterfaces=true,withSeparateModelsAndApi=true,withTypedRequestBodies=true,withUnionTypes"
@@ -41,7 +41,7 @@
     "@vue/cli-service": "^5.0.8",
     "@vue/compiler-sfc": "^3.2.47",
     "@vue/eslint-config-prettier": "^7.1.0",
-    "babel-eslint": "^10.1.0",
+    "@babel/eslint-parser": "^7.19.1",
     "eslint": "7.32.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.9.0",
@@ -59,7 +59,7 @@
       "eslint:recommended"
     ],
     "parserOptions": {
-      "parser": "babel-eslint"
+      "parser": "@babel/eslint-parser"
     },
     "rules": {
       "vue/multi-word-component-names": "off"
