@@ -1,172 +1,61 @@
 <template>
   <div class="card">
-    <div class="p-3 pb-0 card-header">
-      <h6 class="mb-0">{{ cardTitle }}</h6>
+    <div class="card-header pb-0">
+      <h6>Alle Personen</h6>
     </div>
-    <div class="p-3 card-body">
-      <ul class="list-group">
-        <li
-          class="mb-2 border-0 list-group-item d-flex justify-content-between border-radius-lg"
-          :class="'ps-0'"
-        >
-          <div class="d-flex align-items-center">
-            <div
-              class="text-center shadow icon icon-shape icon-sm bg-gradient-dark"
-              :class="'me-3'"
-            >
-              <i class="ni ni-mobile-button text-white opacity-10"></i>
-            </div>
-            <div class="d-flex flex-column">
-              <h6 class="mb-1 text-sm text-dark">{{ title }}</h6>
-              <span class="text-xs">
-                {{ titleDesc }},
-                <span class="font-weight-bold">{{ titleDesc2 }}</span>
-              </span>
-            </div>
-          </div>
-          <div class="d-flex">
-            <button
-              class="my-auto btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right"
-            >
-              <i class="ni ni-bold-right" aria-hidden="true"></i>
-            </button>
-          </div>
-        </li>
-        <li
-          class="mb-2 border-0 list-group-item d-flex justify-content-between border-radius-lg"
-          :class="'ps-0'"
-        >
-          <div class="d-flex align-items-center">
-            <div
-              class="text-center shadow icon icon-shape icon-sm bg-gradient-dark"
-              :class="'me-3'"
-            >
-              <i class="ni ni-tag text-white opacity-10"></i>
-            </div>
-            <div class="d-flex flex-column">
-              <h6 class="mb-1 text-sm text-dark">{{ title2 }}</h6>
-              <span class="text-xs">
-                {{ title2Desc }},
-                <span class="font-weight-bold">{{ title2Desc2 }}</span>
-              </span>
-            </div>
-          </div>
-          <div class="d-flex">
-            <button
-              class="my-auto btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right"
-            >
-              <i class="ni ni-bold-right" aria-hidden="true"></i>
-            </button>
-          </div>
-        </li>
-        <li
-          class="border-0 list-group-item d-flex justify-content-between border-radius-lg"
-          :class="'ps-0'"
-        >
-          <div class="d-flex align-items-center">
-            <div
-              class="text-center shadow icon icon-shape icon-sm bg-gradient-dark"
-              :class="'me-3'"
-            >
-              <i class="ni ni-box-2 text-white opacity-10"></i>
-            </div>
-            <div class="d-flex flex-column">
-              <h6 class="mb-1 text-sm text-dark">{{ title3 }}</h6>
-              <span class="text-xs">
-                {{ title3Desc }},
-                <span class="font-weight-bold">{{ title3Desc2 }}</span>
-              </span>
-            </div>
-          </div>
-          <div class="d-flex">
-            <button
-              class="my-auto btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right"
-            >
-              <i class="ni ni-bold-right" aria-hidden="true"></i>
-            </button>
-          </div>
-        </li>
-        <li
-          class="border-0 list-group-item d-flex justify-content-between border-radius-lg"
-          :class="'ps-0'"
-        >
-          <div class="d-flex align-items-center">
-            <div
-              class="text-center shadow icon icon-shape icon-sm bg-gradient-dark"
-              :class="'me-3'"
-            >
-              <i class="ni ni-satisfied text-white opacity-10"></i>
-            </div>
-            <div class="d-flex flex-column">
-              <h6 class="mb-1 text-sm text-dark">{{ title4 }}</h6>
-              <span class="text-xs font-weight-bold">{{ title4Desc }}</span>
-            </div>
-          </div>
-          <div class="d-flex">
-            <button
-              class="my-auto btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right"
-            >
-              <i class="ni ni-bold-right" aria-hidden="true"></i>
-            </button>
-          </div>
-        </li>
-      </ul>
+    <div class="card-body px-0 pt-0 pb-2">
+      <div class="table-responsive p-0">
+        <table class="table align-items-center mb-0" aria-describedby="List of persons">
+          <thead>
+          <tr>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Person</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Rettungsschwimmer</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr v-for="person in persons" :key="person.id">
+            <td>
+              <p class="text-xs font-weight-bold mb-0">{{person.firstname}} {{person.lastname}}</p>
+            </td>
+            <td>
+              <p class="text-xs mb-0">{{person.status}}</p>
+            </td>
+            <td>
+              <p class="text-xs mb-0">{{person.lifeguard}}</p>
+              <i v-if="!person.lifeguard || !validLifeguard(person.lifeguardFrom)" class="fa-solid fa-triangle-exclamation me-2" aria-hidden="true"></i>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import {
+  PersonControllerApi } from "@/api/src/index";
+
 export default {
-  name: "categories-card",
-  props: {
-    cardTitle: {
-      type: String,
-      default: "Categories",
-    },
-    title: {
-      type: String,
-      default: "Devices",
-    },
-    title2: {
-      type: String,
-      default: "Tickets",
-    },
-    title3: {
-      type: String,
-      default: "Error logs",
-    },
-    title4: {
-      type: String,
-      default: "Happy Users",
-    },
-    titleDesc: {
-      type: String,
-      default: "250 in stock",
-    },
-    titleDesc2: {
-      type: String,
-      default: "346+ sold",
-    },
-    title2Desc: {
-      type: String,
-      default: "123 closed",
-    },
-    title4Desc: {
-      type: String,
-      default: "+ 430",
-    },
-    title2Desc2: {
-      type: String,
-      default: "15 open",
-    },
-    title3Desc: {
-      type: String,
-      default: "1 is active",
-    },
-    title3Desc2: {
-      type: String,
-      default: "40 closed",
-    },
+  name: "persons-table",
+  data: () => ({
+    persons: null,
+    personApi: new PersonControllerApi(),
+  }),
+  created() {
+    // fetch on init
+    this.fetchData()
   },
+  methods: {
+    async fetchData() {
+      this.personApi.indexPersons((error, data) => this.persons = data)
+    },
+    validLifeguard(date) {
+      let twoYearsBefore = new Date();
+      twoYearsBefore.setFullYear(twoYearsBefore.getFullYear() - 2);
+      return date && twoYearsBefore < date
+    }
+  }
 };
 </script>

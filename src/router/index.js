@@ -5,6 +5,7 @@ import Billing from "../views/Billing.vue";
 import Profile from "../views/Profile.vue";
 import Signup from "../views/Signup.vue";
 import Signin from "../views/Signin.vue";
+import Impress from "@/views/components/Impress.vue";
 
 const routes = [
   {
@@ -41,6 +42,11 @@ const routes = [
     path: "/signup",
     name: "Signup",
     component: Signup,
+  },
+  {
+    path: "/impress",
+    name: "Impressum",
+    component: Impress,
   },
   
 ];

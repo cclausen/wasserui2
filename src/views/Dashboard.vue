@@ -49,6 +49,14 @@
           </div>
         </div>
         <div class="row">
+          <div class="col-lg-7 mb-lg-0 mb-4">
+            <persons-presence-table />
+          </div>
+          <div class="col-lg-5">
+            <achievements-card />
+          </div>
+        </div>
+        <div class="row">
           <div class="col-lg-7 mb-lg">
             <!-- line chart -->
             <div class="card z-index-2">
@@ -59,14 +67,6 @@
             <carousel />
           </div>
         </div>
-        <div class="row mt-4">
-          <div class="col-lg-7 mb-lg-0 mb-4">
-            <persons-presence-table />
-          </div>
-          <div class="col-lg-5">
-            <categories-card />
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -75,7 +75,7 @@
 import WasserInfocard from "@/examples/Cards/Card.vue";
 import PresenceLineChart from "@/examples/Charts/PresenceLineChart.vue";
 import Carousel from "./components/Carousel.vue";
-import CategoriesCard from "./components/CategoriesCard.vue";
+import AchievementsCard from "./components/CategoriesCard.vue";
 
 import US from "@/assets/img/icons/flags/US.png";
 import DE from "@/assets/img/icons/flags/DE.png";
@@ -145,7 +145,7 @@ export default {
     WasserInfocard,
     PresenceLineChart,
     Carousel,
-    CategoriesCard,
+    AchievementsCard,
     PersonsPresenceTable,
   },
 };
